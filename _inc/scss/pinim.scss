@@ -1,0 +1,267 @@
+@import "compass/css3";
+@import "pure-tree";
+
+.post-type-pin{
+    
+    #pinim-page-header{
+        padding:1em;
+        text-align:center;
+        #pinim-page-header-feedback{
+            font-size:1.1em;
+            a {
+                text-decoration: none;
+            }
+        }
+        #pinim-page-header-account{
+                padding: 1em;
+                position:relative;
+                text-align:right;
+                font-size:.9em;
+            
+                #user-info-thumb{
+                    background-color:#DDD;
+                    margin-right:0.5em;
+                    height: 2.5em;
+                    width: 2.5em;
+                    vertical-align: middle;
+                }
+
+
+
+                span{
+                    display:inline-block;
+                }
+            }
+
+    }
+    
+    .postbox#pinterest_log{
+        #pinim-db-version{
+            display:block;
+            text-align:right;
+        }
+    }
+
+    .wrap .nav-tab-wrapper{
+        margin-bottom:1em;
+    }
+    
+    .wp-list-table {
+
+        .column-pin_thumbnail,.column-board_thumbnail {
+            width: 100px;
+            position: relative;
+            overflow: hidden;
+            text-align:left;
+            
+            img{
+                height:100px;
+            }
+        }
+
+        tr{
+            &:hover td.column-thumbnail img {
+                opacity: 1;
+            }
+
+            .item-id{
+                color:silver;
+            }
+
+
+
+        }
+
+
+    }
+    
+    &.pin_page_account{
+        #pinim_login_box{
+            max-width:250px;
+            margin:auto;
+            padding: 1em;
+            margin: 2em auto;
+            text-align:center;
+
+            #pinim_login_icon{
+                margin-bottom:2em;
+                i{
+                    font-size:5em;
+                }
+            }
+
+            input[type=text],input[type=password] {
+                font-size: 24px;
+                width: 100%;
+                padding: 3px;
+                margin: 2px 6px 16px 0;
+                background: #fbfbfb;
+            }
+
+        }
+
+        p.submit{
+            text-align:center;
+        }
+    }
+    
+    &.pin_page_settings{
+
+    }
+    &.pin_page_boards {
+
+        .view_filter{
+            float:right;
+        }
+        
+        .pins-count{
+            @include opacity(.5);
+        }
+
+        .pinim-pc-bar{
+            position: relative;
+            display:block;
+            background-color:rgba(#CCC, 0.4);
+            clear:both;
+            width:100%;
+            height:1.5em;
+            line-height:1.5em;
+
+            .pinim-pc-bar-fill{
+                display:block;
+                height:100%;
+                text-align:left;
+                @include transition(all 0.5s ease-out);
+                position:relative;
+                z-index:0;
+                .pinim-pc-bar-fill-color{
+                    width:100%;
+                    height:100%;
+                    position: absolute;
+                    z-index:-1;
+                    &.pinim-pc-bar-fill-yellow{
+                        background-color:#FFE000;
+                    }
+                    &.pinim-pc-bar-fill-red{
+                        background-color:red;
+                    }
+                }
+
+                .pinim-pc-bar-text{
+                    margin:auto;
+                    display:block;
+                    text-align:center;
+                    font-size: 0.8em;
+                    i.fa{
+                        padding:0 0.5em;
+                    }
+                }
+
+            }
+
+            &.color-light .pinim-pc-bar-text{
+                color:white;
+            }
+
+            &.empty{
+                .pinim-pc-bar-fill{
+                    width:100%!important;
+                }
+
+                .pinim-pc-bar-fill-color{
+                    display:none;
+                }
+                .pinim-pc-bar-text{
+                    color:inherit;
+                    font-size:0.8em;
+                }
+            }
+
+            &.complete{
+
+            }
+            &.incomplete{
+                .pinim-pc-bar-text{
+                    text-align:right;
+                }
+            }
+
+        }
+
+        .pinim-form-boards{
+
+            p.submit{
+                text-align:center;
+            }
+
+            .wp-list-table {
+
+                [data-colname]{
+                    text-align:center;
+                }
+
+                .column-cached_pins_imported{
+                    text-align:center;
+                }
+
+                .column-private {
+                  width: 4em;
+                }
+
+                .column-pin_count_remote {
+                  width: 8em;
+                }
+
+                tbody tr{
+                    &.is-checked{
+                        background-color:#FAFFE9;
+                    }
+                }
+
+            }
+
+
+
+            &.view-filter-simple{
+
+                width:65%;
+                margin:auto;
+
+                .item-id{
+                    display:none;
+                }
+
+                .column-category,.column-private,.column-board_id{
+                    display:none;
+                }
+            }
+
+
+        }
+
+        #pinim-form-follow-boards-input{
+            width: 65%;
+            margin: auto;
+            #follow-new-board{
+                textarea{
+                    width:100%;
+                    min-height:8em;
+                }
+            }
+
+        }
+
+
+    }
+    &.pin_page_pending-importation{
+        
+    }
+}
+
+img.img-cover,.img-cover > img {
+  vertical-align: top;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
